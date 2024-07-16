@@ -1,0 +1,38 @@
+<nav class="navbar navbar-default">
+    <div class="container-fluid">
+        <div class="navbar-headed">
+            <a class="navbar-brand" routerLink="/">GreenGrow</a>
+        </div>
+        <div [ngSwitch]="usertype">
+        <ul class="nav navbar-nav" *ngSwitchCase="'guest'">
+            <li class="active"><a routerLink="/">Home</a></li>
+            <li class="active"><a routerLink="/about">About Us</a></li>
+            <li class="active"><a routerLink="/product">Products</a></li>
+            <li class="active"><a routerLink="/register">Register</a></li>
+            <li class="active"><a routerLink="/login">Login</a></li>
+            <li class="active"><a routerLink="/adminlogin">Admin-Login</a></li>
+
+        </ul>
+        <ul class="nav navbar-nav" *ngSwitchCase="'user'">
+            <li class="active"><a routerLink="/">Home</a></li>
+            <li class="active"><a routerLink="/about">About</a></li>
+            <li class="active"><a routerLink="/product">Products</a></li>
+            <li class="active"><a routerLink="/order">My Order</a></li>
+            <li class="active"><a routerLink="/contact">Contact</a></li>
+            <li class="active"><a routerLink="/feedback">Feedback</a></li>
+            <li class="active"><a (click)="logout()">Logout</a></li>
+
+        </ul>
+        <ul class="nav navbar-nav" *ngSwitchCase="'admin'">
+            <li class="active"><a routerLink="/">Home</a></li>
+            <li><a routerLink="/addprodects">Add Products</a></li>
+            <li><a routerLink="/viewproducts">View Products</a></li>
+            <li><a routerLink="/viewusers">View Users</a></li>
+            <li><a routerLink="/vieworders">Fee Orders</a></li>
+            <li><a (click)="alogout()">Logout</a></li>
+           
+          </ul>
+      </div>  
+    </div>
+</nav>
+
