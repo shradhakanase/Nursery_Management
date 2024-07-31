@@ -1,1 +1,140 @@
-<p>register works!</p>
+<div class="col-sm-3"></div>
+<form #regfrm="ngForm" (ngSubmit)="submitdata(regfrm)" class="col-sm-6" style="background-color:aquamarine;">
+    <h1 class="text-center">Registration Form</h1>
+    <div class="form-group">
+        <label for="name">Name:</label>
+        <input type="text" class="form-control" id="nm" name="name" #name="ngModel" [(ngModel)]="reg.name" required
+            pattern="[a-zA-Z]+">
+        <div *ngIf="!name.valid" style="color: red;">
+            <div *ngIf="name.errors?.['required']">
+                Name can not be blank
+            </div>
+            <div *ngIf="name.errors?.['pattern']">
+                Name can contain only alphabets
+            </div>
+        </div>
+    </div>
+    <div class="form-group">
+        <label for="address">Address:</label>
+        <textarea type="text" class="form-control" id="address" name="address" #address="ngModel"
+            [(ngModel)]="reg.address" required></textarea>
+        <div *ngIf="!address.valid" style="color: red;">
+            <div *ngIf="address.errors?.['required']">
+                Address can not be blank
+            </div>
+        </div>
+    </div>
+    <div class="form-group">
+        <label for="birth">Birth Date:</label>
+        <input type="date" class="form-control" id="birth" name="birth" #birth="ngModel" [(ngModel)]="reg.bdate"
+            required>
+        <div *ngIf="!birth.valid" style="color: red;">
+            <div *ngIf="birth.errors?.['required']">
+                Address can not be blank
+            </div>
+        </div>
+    </div>
+    <div class="form-row">
+        <div class="form-group col-md-4">
+            <label for="city">City:</label>
+            <select class="form-control" id="city" name="city" #city="ngModel" [(ngModel)]="reg.city" required>
+                <option>Pune</option>
+                <option>Mumbai</option>
+                <option>Satara</option>
+                <option>Sangli</option>
+            </select>
+            <div *ngIf="!city.valid" style="color: red;">
+                <div *ngIf="city.errors?.['required']">
+                    Select a city
+                </div>
+            </div>
+        </div>
+        <div class="form-group col-md-4">
+            <label for="state">State:</label>
+            <select class="form-control" id="state" name="state" #state="ngModel" [(ngModel)]="reg.state" required>
+                <option>Andhra Pradesh</option>
+                <option>Arunachal Pradesh</option>
+                <option>Assam</option>
+                <option>Bihar</option>
+                <option>Chhattisgarh</option>
+                <option>Gujarat</option>
+                <option>Haryana</option>
+                <option>Himachal Pradesh</option>
+                <option>Jammu and Kashmir</option>
+                <option>Madhya Pradesh</option>
+                <option>Maharashtra</option>
+
+            </select>
+            <div *ngIf="!state.valid" style="color: red;">
+                <div *ngIf="state.errors?.['required']">
+                    Select a State
+                </div>
+            </div>
+        </div>
+        <div class="form-group col-md-4">
+            <label for="country">Country:</label>
+            <input type="text" class="form-control" id="country" name="country" #country="ngModel"
+                [(ngModel)]="reg.country" required>
+            <div *ngIf="!country.valid" style="color: red;">
+                <div *ngIf="country.errors?.['required']">
+                    Select a State
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="form-group">
+        <label for="contact">Contact:</label>
+        <input type="text" class="form-control" id="contact" name="contact" #contact="ngModel" [(ngModel)]="reg.contact"
+            required pattern="[0-9]{10}">
+        <div *ngIf="!contact.valid" style="color: red;">
+            <div *ngIf="contact.errors?.['required']">
+                contact can not be blank
+            </div>
+            <div *ngIf="contact.errors?.['pattern']">
+                contact can contain only Numeric values
+            </div>
+        </div>
+    </div>
+    <div class="form-row">
+        <div class="form-group col-md-6">
+            <label for="email">Email Address:</label>
+            <input type="email" class="form-control" id="email" name="email" #email="ngModel" [(ngModel)]="reg.email"
+                required>
+            <div *ngIf="!email.valid" style="color: red;">
+                <div *ngIf="email.errors?.['required']">
+                    email cannot be empty
+                </div>
+                <div *ngIf="email.errors?.['email']">
+                    enter valid email id
+                </div>
+
+            </div>
+        </div>
+        <div class="form-group col-md-6">
+            <label for="password">Password:</label>
+            <input type="password" class="form-control" id="password" name="password" #pass="ngModel"
+                [(ngModel)]="reg.password" required pattern="[a-zA-Z0-9_*#@]{8,15}">
+            <div *ngIf="!pass.valid" style="color: red;">
+                <div *ngIf="pass.errors?.['required']">
+                    password can not be blank
+                </div>
+                <div *ngIf="pass.errors?.['pattern']">
+                    password should contain Numeric values,Special symbols and alphabets must have lenght between 8 and
+                    15
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="form-row text-center">
+        <div class="col-md-6">
+            <button type="submit" class="btn btn-info btn-lg w-100 py-3">Submit</button>
+        </div>
+        <div class="col-md-6">
+            <button type="reset" class="btn btn-warning btn-lg w-100 py-3">Reset</button>
+        </div>
+    </div>
+    <br>
+</form>
+
+<div class="col-sm-3"></div>

@@ -1,1 +1,33 @@
-<p>admin-login works!</p>
+
+
+<h1 class="text-center">Admin Login Form</h1>
+<form  #adform="ngForm" (ngSubmit)="submitdata(adform)">
+   
+    <div class="form-group">
+        <label for="">Email address:</label>
+        <input type="email" class="form-control" id="email" name="email" #email="ngModel" [(ngModel)]="adm.email" required>
+        <div *ngIf="!email.valid" style="color: red;">
+            <div *ngIf="email.errors?.['required']">
+              email cannot be empty
+            </div>
+            <div *ngIf="email.errors?.['email']">
+              enter valid email id
+            </div>
+      
+          </div>
+      </div>
+      <div class="form-group">
+        <label for="pwd">Password:</label>
+        <input type="password" class="form-control" id="pwd" name="password" #pass="ngModel" [(ngModel)]="adm.password">
+        <div *ngIf="!pass.valid" style="color: red;">
+            <div *ngIf="pass.errors?.['required']">
+                password can not be blank
+            </div>
+            <div *ngIf="pass.errors?.['pattern']">
+                password should contain Numeric values,Special symbols and alphabets must have lenght between 8 and
+                15
+            </div>
+        </div>
+      </div>
+        <button type="submit" class="btn btn-default">Submit</button>
+</form>
