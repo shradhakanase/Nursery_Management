@@ -17,8 +17,11 @@ export class NavComponent implements OnInit {
   ngOnInit(): void {
     this.router.events.subscribe((val: any) => {
       if (val.url) {
-        typeof window.localStorage != 'undefined'
-        let e = localStorage.getItem('email');
+        if (typeof window === "object") {
+          //This code is executed in the browser
+           console.log(window.innerWidth)
+       }
+        var e = localStorage.getItem('email');
         console.log("email=" + e)
         if (e != null) {
           this.usertype = "user"
@@ -33,9 +36,7 @@ export class NavComponent implements OnInit {
         }
 
       }
-      else{
-        alert('error occured')
-      }
+      
     });
 
 

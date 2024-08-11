@@ -1,5 +1,7 @@
 package com.srk.NurseryBackend.Service;
 
+
+
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -13,15 +15,17 @@ import com.srk.NurseryBackend.Repository.ProductRepository;
 public class ProductServiceImpl implements ProductService{
 	@Autowired
 ProductRepository proRepo;
-	@Override
-	public Product insert(Product p) {
-		// TODO Auto-generated method stub
-		return proRepo.save(p);
-	}
-
-	@Override
-	public List<Product> getAll() {
-		// TODO Auto-generated method stub
-		return proRepo.findAll();
-	}
+public Product addNewProduct(Product product) {
+	return proRepo.save(product);
+}
+@Override
+public List<Product> getAll() {
+	// TODO Auto-generated method stub
+	return proRepo.findAll();
+}
+@Override
+public void delete(int productId) {
+	// TODO Auto-generated method stub
+	proRepo.deleteById(productId);
+}
 }

@@ -22,7 +22,7 @@ export class ContactComponent {
       this.cs.insert(this.con).subscribe((data: Contact) => {
         if (data != null) {
           alert('Saved')
-          this.router.navigate(["/login"])
+          this.router.navigate(["/"])
         }
       })
     }else{

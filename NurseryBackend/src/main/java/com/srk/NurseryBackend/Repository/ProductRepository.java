@@ -7,6 +7,6 @@ import org.springframework.stereotype.Repository;
 import com.srk.NurseryBackend.Model.Product;
 @Repository
 @Qualifier("proRepo")
-public interface ProductRepository extends JpaRepository<Product, Long>{
+public interface ProductRepository extends JpaRepository<Product, Integer>{
 
 }

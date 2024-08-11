@@ -11,6 +11,7 @@ import { AddproductComponent } from './addproduct/addproduct.component';
 import { VieworderComponent } from './vieworder/vieworder.component';
 import { ViewproductComponent } from './viewproduct/viewproduct.component';
 import { ViewuserComponent } from './viewuser/viewuser.component';
+import { ProductComponent } from './product/product.component';
 
 export const routes: Routes = [
     {path:"",component:HomeComponent},
@@ -19,11 +20,12 @@ export const routes: Routes = [
     {path:"feedback",component:FeedbackComponent},
     {path:"login",component:LoginComponent},
     {path:"order",component:OrderComponent},
-    {path:"product",component:OrderComponent},
+    {path:"product",component:ProductComponent},
     {path:"register",component:RegisterComponent},
     {path:"adminlogin",component:AdminLoginComponent},
     {path:"addproduct",component:AddproductComponent},
     {path:"viewproduct",component:ViewproductComponent},
     {path:"viewuser",component:ViewuserComponent},
     {path:"vieworder",component:VieworderComponent},
+   
 ];

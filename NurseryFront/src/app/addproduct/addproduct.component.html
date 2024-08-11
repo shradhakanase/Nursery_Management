@@ -1,1 +1,80 @@
-<p>addproduct works!</p>
+<div class="container">
+    <div class="well" style="padding: 2%;">
+        <h1 class="text-center">Add Product Here</h1>
+
+        <div class="row">
+            <form #cform="ngForm" (ngSubmit)="submitdata(cform)">
+                <div class="col-md-6">
+                    <div class="form-group">
+                        <label for="productname">Product Name:</label>
+                        <input type="text" class="form-control" id="productname" name="productname"
+                            #productname="ngModel" [(ngModel)]="pro.productName" required >
+                        <div *ngIf="!productname.valid" style="color: red;">
+                            <div *ngIf="productname.errors?.['required']">
+                                Name can not be blank
+                            </div>
+                            
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="productdesc">Product Description:</label>
+                        <input type="text" class="form-control" id="productdesc" name="productdesc"
+                            #productdesc="ngModel" [(ngModel)]="pro.productDescription" required>
+                        <div *ngIf="!productdesc.valid" style="color: red;">
+                            <div *ngIf="productdesc.errors?.['required']">
+                                Please Enter Required Information.
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="productap">Product Actual Price:</label>
+                        <input type="number" class="form-control" id="productap" name="productap" #productap="ngModel"
+                            [(ngModel)]="pro.productActualPrice" required>
+                        <div *ngIf="!productap.valid" style="color: red;">
+                            <div *ngIf="productap.errors?.['required']">
+                                Please Enter Required Information.
+                            </div>
+
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="productdp">Product Discounted Price:</label>
+                        <input type="number" class="form-control" id="productdp" name="productdp" #productdp="ngModel"
+                            [(ngModel)]="pro.productDiscountedPrice">
+
+                    </div>
+                    <div class="form-row text-center">
+                        <div class="col-md-6">
+                            <button type="submit" class="btn btn-info btn-sm w-100 py-3">Add Product</button>
+                        </div>
+                        <div class="col-md-6">
+                            <button type="reset" class="btn btn-warning btn-sm w-100 py-3">Reset</button>
+                        </div>
+                    </div>
+                    <br><br>
+                </div>
+            </form>
+            <div class="col-md-6">
+                <div>
+                    <input type="file" multiple value="select" #selectFile (change)="onFileSelected($event)">
+                </div>
+                
+                    <div class="mt-5">
+                        <div class="row">
+                            <mat-grid-list cols="4" rowHeight="1:1">
+                                <mat-grid-tile *ngFor="let file of pro.productImages; let i=index;">
+                                    <div style="position: relative;">
+                                        <span class="btn-remove-image" (click)="removeImages(i)">x</span>
+                                        <img [src]="file.url" height="100px" width="100px">
+
+                                    </div>
+                                </mat-grid-tile>
+
+                            </mat-grid-list>
+                        </div>
+                    </div>
+                
+            </div>
+        </div>
+    </div>
+</div>

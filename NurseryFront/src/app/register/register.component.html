@@ -4,7 +4,7 @@
     <div class="form-group">
         <label for="name">Name:</label>
         <input type="text" class="form-control" id="nm" name="name" #name="ngModel" [(ngModel)]="reg.name" required
-            pattern="[a-zA-Z]+">
+            pattern="[A-Za-z]+">
         <div *ngIf="!name.valid" style="color: red;">
             <div *ngIf="name.errors?.['required']">
                 Name can not be blank
