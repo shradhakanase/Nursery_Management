@@ -1,1 +1,32 @@
-<p>vieworder works!</p>
+<div class="container mt-5">
+    <table mat-table [dataSource]="orderDetails" class="mat-elevation-z8">
+
+        <!-- Position Column -->
+        <ng-container matColumnDef="Id">
+            <th mat-header-cell *matHeaderCellDef> Id </th>
+            <td mat-cell *matCellDef="let element"> {{element.oid}} </td>
+        </ng-container>
+        <ng-container matColumnDef="Name">
+            <th mat-header-cell *matHeaderCellDef> Name </th>
+            <td mat-cell *matCellDef="let element"> {{element.name}} </td>
+        </ng-container>
+        <ng-container matColumnDef="Address">
+            <th mat-header-cell *matHeaderCellDef> Address </th>
+            <td mat-cell *matCellDef="let element"> {{element.address}} </td>
+        </ng-container>
+        <ng-container matColumnDef="Contact">
+            <th mat-header-cell *matHeaderCellDef> Contact </th>
+            <td mat-cell *matCellDef="let element"> {{element.contact}} </td>
+        </ng-container>
+        <ng-container matColumnDef="Quantity">
+            <th mat-header-cell *matHeaderCellDef> Quantity </th>
+            <td mat-cell *matCellDef="let element"> {{element.quantity}} </td>
+        </ng-container>
+
+        
+        
+
+        <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+        <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+    </table>
+</div>

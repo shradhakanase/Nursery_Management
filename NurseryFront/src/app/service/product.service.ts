@@ -7,6 +7,10 @@ import { Product } from '../models/product';
   providedIn: 'root'
 })
 export class ProductService {
+productDiscountedPrice: any;
+  getProductDetailById(id: string):Observable<Product> {
+    return this.http.get<Product>(this.serverurl+"/product"+id)
+  }
 
   serverurl="http://localhost:8080/nurserydb"
 
@@ -24,4 +28,5 @@ export class ProductService {
     return this.http.delete<any>(this.serverurl+"/product/"+productId)
 
   }
+
 }

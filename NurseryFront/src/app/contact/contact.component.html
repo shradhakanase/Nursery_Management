@@ -1,55 +1,69 @@
+<div class="col-sm-3"></div>
+<div class="container ">
+    <div class="well" style="padding: 1%;">
+        <div class="row">
+            <h1 class="text-center"><b>Contact Us</b></h1><br>
+            <div class="col-sm-6 text-center">
 
 
-<div class="col-sm-3">
-    <h1 class="text-center">Our Location</h1>
-    <h4>Gramsevak Prakshin Kendra, Pune<br> Solapur Road, Manjari
-        <br>Farm,Haveli, Pune, Maharashtra, 412307</h4>
-        <h4><b>Mobile No.</b><br>8468888666</h4>
-        <h4><b>Opening Times</b><br>
-            (10am - 07pm)
-            </h4>
-</div>
-<form #cform="ngForm" (ngSubmit)="submitdata(cform)" class="col-sm-3">
-    <h1 class="text-center">Contact Us</h1>
-<div class="form-group">
-   
-    <input type="text" class="form-control" id="nm" name="name" #name="ngModel" [(ngModel)]="con.name" placeholder="Name" required pattern="[a-zA-Z]+">
-    <div *ngIf="!name.valid" style="color: red;">
-        <div *ngIf="name.errors?.['required']">
-            Name can not be blank
-        </div>
-        <div *ngIf="name.errors?.['pattern']">
-            Name can contain only alphabets
+                <h4><b>Address-</b><br>Bombay Restaurant,<br> Satara Highway Road
+                    <br>Satara, Maharashtra, 415003
+                </h4>
+                <h4><b>Mobile No.</b><br>8468888666</h4>
+                <h4><b>Opening Times</b><br>
+                    (10am - 07pm)
+                </h4>
+            </div>
+            <div class="col-sm-6 ">
+                <form #cform="ngForm" (ngSubmit)="submitdata(cform)">
+
+                    <div class="form-group">
+
+                        <input type="text" class="form-control" id="nm" name="name" #name="ngModel"
+                            [(ngModel)]="con.name" placeholder="Name" required pattern="[a-zA-Z]+">
+                        <div *ngIf="!name.valid" style="color: red;">
+                            <div *ngIf="name.errors?.['required']">
+                                Name can not be blank
+                            </div>
+                            <div *ngIf="name.errors?.['pattern']">
+                                Name can contain only alphabets
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="email">Email Address:</label>
+                        <input type="email" class="form-control" id="email" name="email" #email="ngModel"
+                            [(ngModel)]="con.email" required>
+                        <div *ngIf="!email.valid" style="color: red;">
+                            <div *ngIf="email.errors?.['required']">
+                                Name can not be blank
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="subject">Subject:</label>
+                        <input type="text" class="form-control" id="subject" name="subject" #sub="ngModel"
+                            [(ngModel)]="con.subject" required>
+                        <div *ngIf="!sub.valid" style="color: red;">
+                            <div *ngIf="sub.errors?.['required']">
+                                Name can not be blank
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="message">Message:</label>
+                        <textarea type="text" class="form-control" id="message" name="message" #msg="ngModel"
+                            [(ngModel)]="con.message" required></textarea>
+                        <div *ngIf="!msg.valid" style="color: red;">
+                            <div *ngIf="msg.errors?.['required']">
+                                Name can not be blank
+                            </div>
+                        </div>
+                    </div>
+                    <div class="text-center"><button type="submit" class="btn btn-primary">Submit</button></div>
+
+                </form>
+            </div>
         </div>
     </div>
 </div>
-<div class="form-group">
-    <label for="email">Email Address:</label>
-    <input type="email" class="form-control" id="email" name="email" #email="ngModel" [(ngModel)]="con.email" required>
-    <div *ngIf="!email.valid" style="color: red;">
-        <div *ngIf="email.errors?.['required']">
-            Name can not be blank
-        </div>
-    </div>
-</div>
-<div class="form-group">
-    <label for="subject">Subject:</label>
-    <input type="text" class="form-control" id="subject" name="subject" #sub="ngModel" [(ngModel)]="con.subject" required>
-    <div *ngIf="!sub.valid" style="color: red;">
-        <div *ngIf="sub.errors?.['required']">
-            Name can not be blank
-        </div>
-        </div>
-</div>
-<div class="form-group">
-    <label for="message">Message:</label>
-    <textarea type="text" class="form-control" id="message" name="message" #msg="ngModel" [(ngModel)]="con.message" required></textarea>
-    <div *ngIf="!msg.valid" style="color: red;">
-        <div *ngIf="msg.errors?.['required']">
-            Name can not be blank
-        </div>
-    </div>
-</div>
-
-<button type="submit" class="btn btn-default">Submit</button>
-</form>

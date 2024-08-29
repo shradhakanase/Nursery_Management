@@ -12,6 +12,8 @@ import { VieworderComponent } from './vieworder/vieworder.component';
 import { ViewproductComponent } from './viewproduct/viewproduct.component';
 import { ViewuserComponent } from './viewuser/viewuser.component';
 import { ProductComponent } from './product/product.component';
+import { ViewDetailsComponent } from './view-details/view-details.component';
+import { MyorderComponent } from './myorder/myorder.component';
 
 export const routes: Routes = [
     {path:"",component:HomeComponent},
@@ -27,5 +29,7 @@ export const routes: Routes = [
     {path:"viewproduct",component:ViewproductComponent},
     {path:"viewuser",component:ViewuserComponent},
     {path:"vieworder",component:VieworderComponent},
-   
+    {path:"viewDetails",component:ViewDetailsComponent},
+    {path:"myorder",component:MyorderComponent}
+
 ];

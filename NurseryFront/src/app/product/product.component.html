@@ -19,7 +19,10 @@
             {{p.productActualPrice}}</b>
         </div>
         <div>
-          <button class="btn btn-primary btn-sm" type="button">View Details</button>
+          <button class="btn btn-warning btn-sm" type="button" (click)="showProductDetails(p.productId)">View Details</button>
+        &nbsp;
+           
+          <button class="btn btn-primary btn-sm" type="button" (click)="buynow(p.productId)">Buy Now</button>
         </div>
       </div>
     </mat-grid-tile>

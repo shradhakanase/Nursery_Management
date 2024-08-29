@@ -1,1 +1,58 @@
-<p>order works!</p>
+<div class="col-sm-3"></div>
+<div class="container col-sm-6">
+    <div class="well" style="padding: 4%;">
+        <div class="row">
+            <h1 class="text-center"><b>Buy Now</b></h1>
+            <form #fbform="ngForm" (ngSubmit)="submitdata(fbform)">
+                
+                <div class="form-group">
+                    <label for="name">Name:</label>
+                    <input type="text" class="form-control" id="nm" name="name" #name="ngModel" [(ngModel)]="ord.name"
+                        required pattern="[a-zA-Z' ']+">
+                    <div *ngIf="!name.valid" style="color: red;">
+                        <div *ngIf="name.errors?.['required']">
+                            Name can not be blank
+                        </div>
+                        <div *ngIf="name.errors?.['pattern']">
+                            Name can contain only alphabets
+                        </div>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="address">Address:</label>
+                    <input type="address" class="form-control" id="address" name="address" #address="ngModel"
+                        [(ngModel)]="ord.address" required>
+
+                </div>
+                <div class="form-group">
+                    <label for="contact">Contact:</label>
+                    <input type="text" class="form-control" id="contact" name="contact" #contact="ngModel"
+                        [(ngModel)]="ord.contact" required pattern="[0-9]{10}">
+                    <div *ngIf="!contact.valid" style="color: red;">
+                        <div *ngIf="contact.errors?.['required']">
+                            contact can not be blank
+                        </div>
+                        <div *ngIf="contact.errors?.['pattern']">
+                            contact can contain only Numeric values
+                        </div>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label for="qty">Quantity:</label>
+                    <input type="text" class="form-control" id="qty" name="qty" #quant="ngModel"
+                        [(ngModel)]="ord.quantity" required>
+
+                </div>
+                
+               
+
+
+                <div class="text-center"><button type="submit" class="btn btn-primary">Submit</button></div>
+
+
+            </form>
+
+        </div>
+    </div>
+</div>

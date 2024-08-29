@@ -25,7 +25,7 @@ export class ContactComponent {
           this.router.navigate(["/"])
         }
       })
-    }else{
+    } else {
       alert("Please input valid data")
     }
   }

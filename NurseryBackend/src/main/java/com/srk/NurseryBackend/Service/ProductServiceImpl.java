@@ -28,4 +28,10 @@ public void delete(int productId) {
 	// TODO Auto-generated method stub
 	proRepo.deleteById(productId);
 }
+@Override
+public List<Product> getAllByid(int productId) {
+	// TODO Auto-generated method stub
+	return proRepo.findAllByproductId(productId);
+}
+
 }

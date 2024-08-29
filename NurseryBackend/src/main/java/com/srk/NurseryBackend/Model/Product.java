@@ -40,6 +40,7 @@ public class Product {
 	public void setProductImages(Set<ImageModel> productImages) {
 		this.productImages = productImages;
 	}
+	
 	public Product() {
 		super();
 		// TODO Auto-generated constructor stub

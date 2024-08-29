@@ -1,6 +1,10 @@
 <div class="col-sm-3"></div>
-<form #regfrm="ngForm" (ngSubmit)="submitdata(regfrm)" class="col-sm-6" style="background-color:aquamarine;">
-    <h1 class="text-center">Registration Form</h1>
+<div class="container col-sm-6 " >
+  <div class="well" style="padding: 4%;">
+    <div class="row">
+        <h1 class="text-center"><b>Registration Form</b></h1>
+<form #regfrm="ngForm" (ngSubmit)="submitdata(regfrm)" >
+  
     <div class="form-group">
         <label for="name">Name:</label>
         <input type="text" class="form-control" id="nm" name="name" #name="ngModel" [(ngModel)]="reg.name" required
@@ -128,13 +132,13 @@
     </div>
     <div class="form-row text-center">
         <div class="col-md-6">
-            <button type="submit" class="btn btn-info btn-lg w-100 py-3">Submit</button>
+            <button type="submit" class="btn btn-info btn-sm ">Submit</button>
         </div>
         <div class="col-md-6">
-            <button type="reset" class="btn btn-warning btn-lg w-100 py-3">Reset</button>
+            <button type="reset" class="btn btn-warning btn-sm ">Reset</button>
         </div>
     </div>
     <br>
 </form>
 
-<div class="col-sm-3"></div>
+    </div></div></div>

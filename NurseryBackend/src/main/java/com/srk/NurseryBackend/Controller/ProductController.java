@@ -70,6 +70,12 @@ public class ProductController {
 		productServ.delete(productId);
 	}
 	
+	@GetMapping("/product/{productid}")
+	public List<Product> getAllByid(@PathVariable("productid") int productId)
+	{
+		return productServ.getAllByid(productId);
+	}
+	
 	}
 
 

@@ -1,1 +1,43 @@
-<p>viewuser works!</p>
+<div class="container mt-5">
+    <table mat-table [dataSource]="productDetails" class="mat-elevation-z8">
+
+        <!-- Position Column -->
+        <ng-container matColumnDef="Id">
+            <th mat-header-cell *matHeaderCellDef> Id </th>
+            <td mat-cell *matCellDef="let element"> {{element.id}} </td>
+        </ng-container>
+        <ng-container matColumnDef="Name">
+            <th mat-header-cell *matHeaderCellDef> Name </th>
+            <td mat-cell *matCellDef="let element"> {{element.name}} </td>
+        </ng-container>
+        <ng-container matColumnDef="Birth-Date">
+            <th mat-header-cell *matHeaderCellDef> Birth-Date </th>
+            <td mat-cell *matCellDef="let element"> {{element.bdate}} </td>
+        </ng-container>
+        <ng-container matColumnDef="Contact">
+            <th mat-header-cell *matHeaderCellDef> Contact </th>
+            <td mat-cell *matCellDef="let element"> {{element.contact}} </td>
+        </ng-container>
+
+        <ng-container matColumnDef="Address">
+            <th mat-header-cell *matHeaderCellDef> Address </th>
+            <td mat-cell *matCellDef="let element"> {{element.address}} </td>
+        </ng-container>
+        <ng-container matColumnDef="Country">
+            <th mat-header-cell *matHeaderCellDef> Country </th>
+            <td mat-cell *matCellDef="let element"> {{element.country}} </td>
+        </ng-container>
+        <ng-container matColumnDef="Email-Id">
+            <th mat-header-cell *matHeaderCellDef> Email-Id </th>
+            <td mat-cell *matCellDef="let element"> {{element.email}} </td>
+        </ng-container>
+        <ng-container matColumnDef="Password">
+            <th mat-header-cell *matHeaderCellDef> Password </th>
+            <td mat-cell *matCellDef="let element"> {{element.password}} </td>
+        </ng-container>
+        
+
+        <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+        <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+    </table>
+</div>
